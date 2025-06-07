@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Operating System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topnav">
+    <div class="logo">Data Structures and Algorithms</div>
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="menu.html">Menu</a>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>Topics</h2>
+      <ul>
+        <li class="topp"><a href="index.html">Introduction</a></li>
+        <li><a href="type1.html">Arrays</a></li>
+        <li><a href="type2.html">Strings</a></li>
+        <li><a href="type3.html">Linked List</a></li>
+        <li><a href="type4.html">Stack</a></li>
+        <li>
+            <a href="type5.html">Queue</a>
+        </li>
+        <li>
+            <a href="type6.html">Tree</a>
+        </li>
+        <li><a href="type7.html">Graph</a></li>
+        <li>
+            <a href="type8.html">Dynamic Programming</a>
+        </li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <h2>Queue Data Structure</h2>
+      <p>
+        A Queue Data Structure is a fundamental concept in computer science used for storing and managing data in a specific order.
+      </p>
+      <ul>
+        <li>
+            It follows the principle of "First in, First out" (FIFO), where the first element added to the queue is the first one to be removed.
+        </li>
+        <li>
+            It is used as a buffer in computer systems where we have speed mismatch between two devices that communicate with each other. For example, CPU and keyboard and two devices in a network
+        </li>
+        <li>
+            Queue is also used in Operating System algorithms like CPU Scheduling and Memory Management, and many standard algorithms like Breadth First Search of Graph, Level Order Traversal of a Tree.
+        </li>
+      </ul>
+      <h2>
+        Introduction to Queue Data Structure
+      </h2>
+      <p>Queue is a linear data structure that follows FIFO (First In First Out) Principle, so the first element inserted is the first to be popped out.</p>
+      <h4>FIFO Principle in Queue:</h4>
+      <p>
+        FIFO Principle states that the first element added to the Queue will be the first one to be removed or processed. So, Queue is like a line of people waiting to purchase tickets, where the first person in line is the first person served. (i.e. First Come First Serve).
+      </p>
+      <center>
+            <img src="./Queue.png" alt="Queue Data Structures">
+      </center>
+      <h3>Basic Terminologies of Queue</h3>
+      <ul>
+        <li>
+            <b>Front:</b> Position of the entry in a queue ready to be served, that is, the first entry that will be removed from the queue, is called the front of the queue. It is also referred as the head of the queue.
+        </li>
+        <li>
+           <b>Rear:</b> Position of the last entry in the queue, that is, the one most recently added, is called the rear of the queue. It is also referred as the tail of the queue. 
+        </li>
+        <li>
+            <b>Size:</b> Size refers to the current number of elements in the queue.
+        </li>
+        <li>
+            <b>Capacity:</b> Capacity refers to the maximum number of elements the queue can hold.
+        </li>
+      </ul>
+      <h3>Queue Operations</h3>
+      <ol>
+        <li>
+           <b>Enqueue:</b> Adds an element to the end (rear) of the queue. If the queue is full, an overflow error occurs. 
+        </li>
+        <li>
+            <b>Dequeue:</b> Removes the element from the front of the queue. If the queue is empty, an underflow error occurs.
+        </li>
+        <li>
+            <b>Peek/Front:</b> Returns the element at the front without removing it.
+        </li>
+        <li>
+            <b>Size:</b> Returns the number of elements in the queue.
+        </li>
+        <li>
+            <b>isEmpty:</b> Returns true if the queue is empty, otherwise false.
+        </li>
+        <li>
+            <b>isFull: </b>Returns true if the queue is full, otherwise false.
+        </li>
+      </ol>
+      <h2>
+        Most Popular coding Problems on Queue Data Structure:
+      </h2>
+      <ul>
+        <li>
+            <a href="https://leetcode.com/problems/implement-stack-using-queues/description/?envType=problem-list-v2&envId=queue">Implement Stack using Queues</a>
+        </li>
+        <li>
+            <a href="https://leetcode.com/problems/implement-queue-using-stacks/description/?envType=problem-list-v2&envId=queue">Implement Queue using Stacks</a>
+        </li>
+        <li><a href="https://leetcode.com/problems/first-unique-character-in-a-string/description/?envType=problem-list-v2&envId=queue">
+            First Unique Character in a String
+        </a></li>
+        <li>
+            <a href="https://leetcode.com/problems/design-circular-queue/description/?envType=problem-list-v2&envId=queue">Design Circular Queue</a>
+        </li>
+        <li>
+            <a href="https://leetcode.com/problems/number-of-recent-calls/description/?envType=problem-list-v2&envId=queue">Number of Recent Calls</a>
+        </li>
+        <li>
+            <a href="https://leetcode.com/problems/sliding-window-maximum/description/?envType=problem-list-v2&envId=queue">Sliding Window Maximum</a>
+        </li>
+      </ul>
+    </main>
+  </div>
+</body>
+</html>

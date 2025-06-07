@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Operating System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topnav">
+    <div class="logo">Data Structures and Algorithms</div>
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="menu.html">Menu</a>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>Topics</h2>
+      <ul>
+        <li class="topp"><a href="index.html">Introduction</a></li>
+        <li><a href="type1.html">Arrays</a></li>
+        <li><a href="type2.html">Strings</a></li>
+        <li><a href="type3.html">Linked List</a></li>
+        <li><a href="type4.html">Stack</a></li>
+        <li>
+            <a href="type5.html">Queue</a>
+        </li>
+        <li>
+            <a href="type6.html">Tree</a>
+        </li>
+        <li><a href="type7.html">Graph</a></li>
+        <li>
+            <a href="type8.html">Dynamic Programming</a>
+        </li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <h1>Introduction to Tree Data Structure</h1>
+      <p>
+        Tree data structure is a hierarchical structure that is used to represent and organize data in the form of parent child relationship. The following are some real world situations which are naturally a tree.
+      </p>
+      <ul>
+        <li>
+            Folder sstructure in an operating system.
+        </li>
+        <li>
+            Tag structure in an HTML (root tag the as html tag) or XML document.
+        </li>
+      </ul>
+      <p>
+        The topmost node of the tree is called the root, and the nodes below it are called the child nodes. Each node can have multiple child nodes, and these child nodes can also have their own child nodes, forming a recursive structure.
+      </p>
+      <br>
+      <center><img src="./tree.png" alt="Tree Data Structure"></center>
+      <h2>Basic Terminologies In Tree Data Structure:</h2>
+      <ul>
+        <li>
+            <b>Parent Node:</b> The node which is an immediate predecessor of a node is called the parent node of that node. {B} is the parent node of {D, E}.
+        </li>
+        <li>
+            <b>Child Node:</b> The node which is the immediate successor of a node is called the child node of that node. Examples: {D, E} are the child nodes of {B}.
+        </li>
+        <li>
+           <b>Root Node:</b> The topmost node of a tree or the node which does not have any parent node is called the root node. {A} is the root node of the tree. A non-empty tree must contain exactly one root node and exactly one path from the root to all other nodes of the tree. 
+        </li>
+        <li>
+            <b>Leaf Node or External Node:</b> The nodes which do not have any child nodes are called leaf nodes. {I, J, K, F, G, H} are the leaf nodes of the tree.
+        </li>
+        <li>
+           <b>Ancestor of a Node:</b> Any predecessor nodes on the path of the root to that node are called Ancestors of that node. {A,B} are the ancestor nodes of the node {E} 
+        </li>
+        <li>
+           <b>Descendant:</b> A node x is a descendant of another node y if and only if y is an ancestor of x. 
+        </li>
+        <li>
+            <b>Sibling:</b> Children of the same parent node are called siblings. {D,E} are called siblings.
+        </li>
+        <li>
+            <b>Level of a node: </b>The count of edges on the path from the root node to that node. The root node has level 0.
+        </li>
+        <li>
+            <b>Internal node:</b> A node with at least one child is called Internal Node.
+        </li>
+        <li>
+            <b>Neighbour of a Node: </b>Parent or child nodes of that node are called neighbors of that node.
+        </li>
+        <li>
+            <b>Subtree:</b> Any node of the tree along with its descendant.
+        </li>
+      </ul>
+      <h2>Representation of a Node in Tree Data Structure:</h2>
+      <p>
+        A tree can be represented using a collection of nodes. Each of the nodes can be represented with the help of class or structs. Below is the representation of Node in different languages:
+      </p>
+      <br>
+      <pre>
+        Syntax in C++
+        -------------
+        class Node {
+        public:
+            int data;
+            Node* first_child;
+            Node* second_child;
+            Node* third_child;
+            .
+            .
+            .
+            Node* nth_child;
+        };
+      </pre>
+      <h2>Types of Tree data structures:</h2>
+      <br>
+      <p>
+        Tree data structure can be classified into three types based upon the number of children each node of the tree can have. The types are:
+      </p>
+      <ul>
+        <li>
+           <b> Binary tree: </b>In a binary tree, each node can have a maximum of two children linked to it. Some common types of binary trees include full binary trees, complete binary trees, balanced binary trees, and degenerate or pathological binary trees. Examples of Binary Tree are Binary Search Tree and Binary Heap.
+        </li>
+        <li>
+            <b>Ternary Tree:</b> A Ternary Tree is a tree data structure in which each node has at most three child nodes, usually distinguished as “left”, “mid” and “right”
+        </li>
+        <li>
+            <b>N-ary Tree or Generic Tree:</b> Generic trees are a collection of nodes where each node is a data structure that consists of records and a list of references to its children(duplicate references are not allowed). Unlike the linked list, each node stores the address of multiple nodes.
+        </li>
+      </ul>
+      <h3>Basic Operations Of Tree Data Structure: </h3>
+      <ul>
+        <li>
+           <b> Create</b> – create a tree in the data structure.
+        </li>
+        <li>
+            <b>Insert</b>- Inserts data in a tree
+        </li>
+        <li>
+            <b>Search</b> − Searches specific data in a tree to check whether it is present or not.
+        </li>
+        <li>
+            <b>Traversal:</b>
+            <li>
+                Depth-First-Search Traversal
+            </li>
+            <li>
+                Breadth-First-Search Traversal
+            </li>
+        </li>
+      </ul>
+      <h2>Implementation of Tree Data Structures:</h2>
+      <pre>
+        Syntax in c++
+        -------------
+        // C++ program to demonstrate some of the above
+        // terminologies
+        #include <bits/stdc++.h>
+        using namespace std;
+
+        // Function to add an edge between vertices x and y
+        void addEdge(int x, int y, vector<vector<int> >& adj)
+        {
+            adj[x].push_back(y);
+            adj[y].push_back(x);
+        }
+
+        // Function to print the parent of each node
+        void printParents(int node, vector<vector<int> >& adj,
+                        int parent)
+        {
+            // current node is Root, thus, has no parent
+            if (parent == 0)
+                cout << node << "->Root" << endl;
+            else
+                cout << node << "->" << parent << endl;
+        
+            // Using DFS
+            for (auto cur : adj[node])
+                if (cur != parent)
+                    printParents(cur, adj, node);
+        }
+
+        // Function to print the children of each node
+        void printChildren(int Root, vector<vector<int> >& adj)
+        {
+            // Queue for the BFS
+            queue<int> q;
+        
+            // pushing the root
+            q.push(Root);
+        
+            // visit array to keep track of nodes that have been
+            // visited
+            int vis[adj.size()] = { 0 };
+        
+            // BFS
+            while (!q.empty()) {
+                int node = q.front();
+                q.pop();
+                vis[node] = 1;
+                cout << node << "-> ";
+                for (auto cur : adj[node])
+                    if (vis[cur] == 0) {
+                        cout << cur << " ";
+                        q.push(cur);
+                    }
+                cout << endl;
+            }
+        }
+
+        // Function to print the leaf nodes
+        void printLeafNodes(int Root, vector<vector<int> >& adj)
+        {
+            // Leaf nodes have only one edge and are not the root
+            for (int i = 1; i < adj.size(); i++)
+                if (adj[i].size() == 1 && i != Root)
+                    cout << i << " ";
+            cout << endl;
+        }
+
+        // Function to print the degrees of each node
+        void printDegrees(int Root, vector<vector<int> >& adj)
+        {
+            for (int i = 1; i < adj.size(); i++) {
+                cout << i << ": ";
+            
+                // Root has no parent, thus, its degree is equal to
+                // the edges it is connected to
+                if (i == Root)
+                    cout << adj[i].size() << endl;
+                else
+                    cout << adj[i].size() - 1 << endl;
+            }
+        }
+        // Driver code
+        int main()
+        {
+            // Number of nodes
+            int N = 7, Root = 1;
+            // Adjacency list to store the tree
+            vector<vector<int> > adj(N + 1, vector<int>());
+            // Creating the tree
+            addEdge(1, 2, adj);
+            addEdge(1, 3, adj);
+            addEdge(1, 4, adj);
+            addEdge(2, 5, adj);
+            addEdge(2, 6, adj);
+            addEdge(4, 7, adj);
+        
+            // Printing the parents of each node
+            cout << "The parents of each node are:" << endl;
+            printParents(Root, adj, 0);
+
+            // Printing the children of each node
+            cout << "The children of each node are:" << endl;
+            printChildren(Root, adj);
+
+            // Printing the leaf nodes in the tree
+            cout << "The leaf nodes of the tree are:" << endl;
+            printLeafNodes(Root, adj);
+
+            // Printing the degrees of each node
+            cout << "The degrees of each node are:" << endl;
+            printDegrees(Root, adj);
+
+            return 0;
+        }
+      </pre>
+      <h3>Output:</h3>
+      <pre>
+        The parents of each node are:
+        1->Root
+        2->1
+        5->2
+        6->2
+        3->1
+        4->1
+        7->4
+        The children of each node are:
+        1-> 2 3 4 
+        2-> 5 6 
+        3-> 
+        4-> 7 
+        5-> 
+        6-> 
+        7-> 
+        The leaf nodes of the tree are:
+        3 5 6 7 
+        The degrees o...
+      </pre>
+      <h2>Properties of Tree Data Structure:</h2>
+      <p>
+        <b>Number of edges: </b>An edge can be defined as the connection between two nodes. If a tree has N nodes then it will have (N-1) edges. There is only one path from each node to any other node of the tree.
+      </p>
+      <p>
+        <b>Depth of a node: </b>The depth of a node is defined as the length of the path from the root to that node. Each edge adds 1 unit of length to the path. So, it can also be defined as the number of edges in the path from the root of the tree to the node.
+      </p>
+      <ul>
+        <li>
+            <b>Height of a node:</b> The height of a node can be defined as the length of the longest path from the node to a leaf node of the tree.
+        </li>
+        <li>
+           <b>Height of the Tree:</b> The height of a tree is the length of the longest path from the root of the tree to a leaf node of the tree. 
+        </li>
+        <li>
+            <b>Degree of a Node:</b> The total count of subtrees attached to that node is called the degree of the node. The degree of a leaf node must be 0. The degree of a tree is the maximum degree of a node among all the nodes in the tree.
+        </li>
+      </ul>
+      <h2>Most Popular coding Problems on Trees:</h2>
+      <ul>
+        <li>
+            <a href="https://leetcode.com/problems/binary-tree-inorder-traversal/description/?envType=problem-list-v2&envId=tree">Binary Tree Inorder Traversal</a>
+        </li>
+        <li>
+            <a href="https://leetcode.com/problems/binary-tree-level-order-traversal/description/?envType=problem-list-v2&envId=tree">Binary Tree Level Order Traversal</a>
+        </li>
+        <li>
+            <a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/description/?envType=problem-list-v2&envId=tree">Maximum Depth of Binary Tree</a>
+        </li>
+        <li>
+            <a href="https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/description/?envType=problem-list-v2&envId=tree">Convert Sorted Array to Binary Search Tree</a>
+        </li>
+        <li><a href="https://leetcode.com/problems/same-tree/description/?envType=problem-list-v2&envId=tree">Same Tree</a></li>
+        <li>
+            <a href="https://leetcode.com/problems/symmetric-tree/description/?envType=problem-list-v2&envId=tree">Symmetric Tree</a>
+        </li>
+    </ul>
+    </main>
+  </div>
+</body>
+</html>

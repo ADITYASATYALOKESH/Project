@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Operating System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topnav">
+    <div class="logo">Data Structures and Algorithms</div>
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="menu.html">Menu</a>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>Topics</h2>
+      <ul>
+        <li class="topp"><a href="index.html">Introduction</a></li>
+        <li><a href="type1.html">Arrays</a></li>
+        <li><a href="type2.html">Strings</a></li>
+        <li><a href="type3.html">Linked List</a></li>
+        <li><a href="type4.html">Stack</a></li>
+        <li>
+            <a href="type5.html">Queue</a>
+        </li>
+        <li>
+            <a href="type6.html">Tree</a>
+        </li>
+        <li><a href="type7.html">Graph</a></li>
+        <li>
+            <a href="type8.html">Dynamic Programming</a>
+        </li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <h2>Dynamic Programming or DP</h2>
+      <p>
+        Dynamic Programming is an algorithmic technique with the following properties.
+      </p>
+      <ul>
+        <li>
+           It is mainly an optimization over plain recursion. Wherever we see a recursive solution that has repeated calls for the same inputs, we can optimize it using Dynamic Programming. 
+        </li>
+        <li>
+            The idea is to simply store the results of subproblems so that we do not have to re-compute them when needed later. This simple optimization typically reduces time complexities from exponential to polynomial.
+        </li>
+        <li>
+            Some popular problems solved using Dynamic Programming are Fibonacci Numbers, Diff Utility (Longest Common Subsequence), Bellman–Ford Shortest Path, Floyd Warshall, Edit Distance and Matrix Chain Multiplication.
+        </li>
+      </ul>
+      <h2>
+        Dynamic Programming (DP) Introduction
+      </h2>
+      <p>
+        Dynamic Programming is a commonly used algorithmic technique used to optimize recursive solutions when same subproblems are called again.
+      </p>
+      <ul>
+        <li>
+            The core idea behind DP is to store solutions to subproblems so that each is solved only once.
+        </li>
+        <li>
+            To solve DP problems, we first write a recursive solution in a way that there are overlapping subproblems in the recursion tree (the recursive function is called with the same parameters multiple times)
+        </li>
+        <li>
+            To make sure that a recursive value is computed only once (to improve time taken by algorithm), we store results of the recursive calls.
+        </li>
+        <li>
+            There are two ways to store the results, one is top down (or memoization) and other is bottom up (or tabulation).
+        </li>
+      </ul>
+      <p>
+        Dynamic programming is used for solving problems that consists of the following characteristics:
+      </p>
+      <h2>1. Optimal Substructure:</h2>
+      <p>
+        The property Optimal substructure means that we use the optimal results of subproblems to achieve the optimal result of the bigger problem.
+      </p>
+      <h3>Example:</h3>
+      <p>
+        Consider the problem of finding the minimum cost path in a weighted graph from a source node to a destination node. We can break this problem down into smaller subproblems:
+      </p>
+      <ul>
+        <li>
+            Find the minimum cost path from the source node to each intermediate node.
+        </li>
+        <li>
+            Find the minimum cost path from each intermediate node to the destination node.
+        </li>
+      </ul>
+      <p>
+        The solution to the larger problem (finding the minimum cost path from the source node to the destination node) can be constructed from the solutions to these smaller subproblems.
+      </p>
+      <h2>
+        2. Overlapping Subproblems:
+      </h2>
+      <p>
+        The same subproblems are solved repeatedly in different parts of the problem refer to Overlapping Subproblems Property in Dynamic Programming.
+      </p>
+      <h3>
+        Example:
+      </h3>
+      <p>
+        Consider the problem of computing the Fibonacci series. To compute the Fibonacci number at index n, we need to compute the Fibonacci numbers at indices n-1 and n-2. This means that the subproblem of computing the Fibonacci number at index n-2 is used twice (note that the call for n - 1 will make two calls, one for n-2 and other for n-3) in the solution to the larger problem of computing the Fibonacci number at index n. 
+      </p>
+      <h2>
+        Approaches of Dynamic Programming (DP)
+      </h2>
+      <p>Dynamic programming can be achieved using two approaches:</p>
+      <img src="./dp_apporaches.webp" alt="DP_apporaches">
+      <h2>
+        Most Popular Coding Problems on Dynamic Programming
+      </h2>
+      <ul>
+        <li>
+            <a href="https://leetcode.com/problems/jump-game/description/?envType=problem-list-v2&envId=dynamic-programming">Jump Game</a>
+        </li>
+        <li>
+            <a href="https://leetcode.com/problems/jump-game-ii/description/?envType=problem-list-v2&envId=dynamic-programming">Jump Game II</a>
+        </li>
+        <li>
+            <a href="https://leetcode.com/problems/maximum-subarray/description/?envType=problem-list-v2&envId=dynamic-programming">Maximum Subarray</a>
+        </li>
+        <li>
+            <a href="https://leetcode.com/problems/unique-paths/description/?envType=problem-list-v2&envId=dynamic-programming">Unique Paths</a>
+        </li>
+        <li>
+            <a href="https://leetcode.com/problems/unique-paths-ii/description/?envType=problem-list-v2&envId=dynamic-programming">Unique Paths II</a>
+        </li>
+        <li>
+            <a href="https://leetcode.com/problems/minimum-path-sum/description/?envType=problem-list-v2&envId=dynamic-programming">Minimum Path Sum</a>
+        </li>
+      </ul>
+    </main>
+  </div>
+</body>
+</html>

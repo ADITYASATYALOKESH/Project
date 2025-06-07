@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Operating System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topnav">
+    <div class="logo">Data Structures and Algorithms</div>
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="menu.html">Menu</a>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>Topics</h2>
+      <ul>
+        <li class="topp"><a href="index.html">Introduction</a></li>
+        <li><a href="type1.html">Arrays</a></li>
+        <li><a href="type2.html">Strings</a></li>
+        <li><a href="type3.html">Linked List</a></li>
+        <li><a href="type4.html">Stack</a></li>
+        <li>
+            <a href="type5.html">Queue</a>
+        </li>
+        <li>
+            <a href="type6.html">Tree</a>
+        </li>
+        <li><a href="type7.html">Graph</a></li>
+        <li>
+            <a href="type8.html">Dynamic Programming</a>
+        </li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <h1>Introduction to Arrays</h1>
+      <p>Array is a collection of items of the same variable type that are stored at contiguous memory locations. It is one of the most popular and simple data structures used in programming.</p><br>
+    <h2>Basic terminologies of Array</h2>
+    <ul>
+        <li><b>Array Index:</b> In an array, elements are identified by their indexes. Array index starts from 0.</li>
+        <li><b>Array element:</b> Elements are items stored in an array and can be accessed by their index.</li>
+        <li><b>Array Length:</b> The length of an array is determined by the number of elements it can contain. </li>
+    </ul>
+    <h2>Memory representation of Array</h2>
+    <br>
+    <p>
+        In an array, all the elements are stored in contiguous memory locations. So, if we initialize an array, the elements will be allocated sequentially in memory. This allows for efficient access and manipulation of elements.
+    </p>
+    <h2>Declaration of Array</h2>
+    <p>Arrays can be declared in various ways in different languages. For better illustration, below are some language-specific array declarations:
+        <br>
+      <pre>
+        Syntax in C++
+        -------------
+        // This array will store integer type element
+        int arr[5];      
+
+        // This array will store char type element
+        char arr[10];   
+
+        // This array will store float type element
+        float arr[20];  
+      </pre>    
+    </p>
+    <h2>Initialization of Array</h2>
+    <p>Arrays can be initialized in different ways in different languages. Below are some language-specific array initializations:
+        <br>
+        <pre>
+            syntax in C++
+            -------------
+            int arr[] = { 1, 2, 3, 4, 5 };
+            char arr[5] = { 'a', 'b', 'c', 'd', 'e' };
+            float arr[10] = { 1.4, 2.0, 24, 5.0, 0.0 };
+        </pre>
+    </p>
+    <h2>Types of Arrays</h2>
+    <p>
+       Arrays can be classified in two ways:
+       <ul>
+        <li>On the basis of Size</li>
+        <li>On the basis of Dimensions</li>
+       </ul> 
+       <img src="./Types-of-Arrays.webp" alt="Types of Arrays">
+    </p>
+    <h2>Types of Arrays on the basis of Size</h2>
+    <h3>1. Fixed Sized Arrays</h3>
+    <p>
+      We cannot alter or update the size of this array. Here only a fixed size (i,e. the size that is mentioned in square brackets []) of memory will be allocated for storage. In case, we don't know the size of the array then if we declare a larger size and store a lesser number of elements will result in a wastage of memory or we declare a lesser size than the number of elements then we won't get enough memory to store all the elements. In such cases, static memory allocation is not preferred.
+      <br>
+      <pre>
+        syntax in c++
+        -------------
+        // Method 1 to create a fixed sized array. 
+        // Here the memory is allocated at compile time.
+        int arr[5]; 
+        // Another way (creation and initialization both)
+        int arr2[5] = {1, 2, 3, 4, 5}; 
+
+        // Method 2 to create a fixed sized array
+        // Here memory is allocated at run time (Also
+        // known as dynamically allocated arrays)
+        int *arr = new int[5];
+      </pre>
+    </p>
+    <h3>2. Dynamic Sized Arrays</h3>
+    <p>
+      The size of the array changes as per user requirements during execution of code so the coders do not have to worry about sizes. They can add and removed the elements as per the need. The memory is mostly dynamically allocated and de-allocated in these arrays.
+      <br>
+      <pre>
+        syntax in c++
+        -------------
+        #include<vector>
+
+        // Dynamic Integer Array
+        vector<int> v;
+      </pre>
+    </p>
+    <h2>
+      Types of Arrays on the basis of Dimensions
+    </h2>
+    <h3>1. One-dimensional Array(1-D Array):</h3>
+    <p>You can imagine a 1d array as a row, where elements are stored one after another.</p>
+    <img src="./one_dimensional.png" alt="One Dimensional Array">
+    <h3>2. Multi-dimensional Array:</h3>
+    <p>
+      A multi-dimensional array is an array with more than one dimension. We can use multidimensional array to store complex data in the form of tables, etc. We can have 2-D arrays, 3-D arrays, 4-D arrays and so on.
+    </p>
+    <p>
+      <b>Two-Dimensional Array(2-D Array or Matrix):</b> 2-D Multidimensional arrays can be considered as an array of arrays or as a matrix consisting of rows and columns.
+    </p>
+    <img src="./two_dimensional.png" alt="two Dimensional Array">
+    <div class="imp">
+      <h1>Most Popular Coding Problems</h1>
+      <ul>
+        <li>
+          <a href="https://leetcode.com/problems/two-sum/description/?envType=problem-list-v2&envId=array">Two Sum</a>
+        </li>
+        <li>
+          <a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/?envType=problem-list-v2&envId=array">Remove Duplicates from Sorted Array</a>
+        </li>
+        <li>
+          <a href="https://leetcode.com/problems/remove-element/description/?envType=problem-list-v2&envId=array">
+            Remove Element
+          </a>
+        </li>
+        <li>
+          <a href="https://leetcode.com/problems/set-matrix-zeroes/description/?envType=problem-list-v2&envId=array">Set Matrix Zeroes</a>
+        </li>
+        <li>
+          <a href="https://leetcode.com/problems/set-matrix-zeroes/description/?envType=problem-list-v2&envId=array">Search a 2D Matrix</a>
+        </li>
+      </ul>
+    </div>
+    </main>
+  </div>
+</body>
+</html>
